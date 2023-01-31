@@ -1,0 +1,12 @@
+D:\DotNET_Programming\StackOverflowProject\StackOverflowProject.ViewModels\bin\Debug\StackOverflowProject.ViewModels.dll
+D:\DotNET_Programming\StackOverflowProject\StackOverflowProject.ViewModels\bin\Debug\StackOverflowProject.ViewModels.pdb
+D:\DotNET_Programming\StackOverflowProject\StackOverflowProject.ViewModels\obj\Debug\StackOverflowProject.ViewModels.csproj.AssemblyReference.cache
+D:\DotNET_Programming\StackOverflowProject\StackOverflowProject.ViewModels\obj\Debug\StackOverflowProject.ViewModels.csproj.CoreCompileInputs.cache
+D:\DotNET_Programming\StackOverflowProject\StackOverflowProject.ViewModels\obj\Debug\StackOverflowProject.ViewModels.dll
+D:\DotNET_Programming\StackOverflowProject\StackOverflowProject.ViewModels\obj\Debug\StackOverflowProject.ViewModels.pdb
+D:\DotNET_Programming\StackOverflowProject\StackOverflowProject.ViewModels\bin\Debug\StackOverflowProject.ViewModels.dll.config
+D:\DotNET_Programming\StackOverflowProject\StackOverflowProject.ViewModels\bin\Debug\EntityFramework.dll
+D:\DotNET_Programming\StackOverflowProject\StackOverflowProject.ViewModels\bin\Debug\EntityFramework.SqlServer.dll
+D:\DotNET_Programming\StackOverflowProject\StackOverflowProject.ViewModels\bin\Debug\EntityFramework.xml
+D:\DotNET_Programming\StackOverflowProject\StackOverflowProject.ViewModels\bin\Debug\EntityFramework.SqlServer.xml
+D:\DotNET_Programming\StackOverflowProject\StackOverflowProject.ViewModels\obj\Debug\StackOverflowProject.ViewModels.csproj.CopyComplete

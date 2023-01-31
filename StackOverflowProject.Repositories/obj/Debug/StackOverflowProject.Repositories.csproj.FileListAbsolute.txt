@@ -1,0 +1,15 @@
+D:\DotNET_Programming\StackOverflowProject\StackOverflowProject.Repositories\bin\Debug\StackOverflowProject.Repositories.dll.config
+D:\DotNET_Programming\StackOverflowProject\StackOverflowProject.Repositories\bin\Debug\StackOverflowProject.Repositories.dll
+D:\DotNET_Programming\StackOverflowProject\StackOverflowProject.Repositories\bin\Debug\StackOverflowProject.Repositories.pdb
+D:\DotNET_Programming\StackOverflowProject\StackOverflowProject.Repositories\bin\Debug\EntityFramework.dll
+D:\DotNET_Programming\StackOverflowProject\StackOverflowProject.Repositories\bin\Debug\EntityFramework.SqlServer.dll
+D:\DotNET_Programming\StackOverflowProject\StackOverflowProject.Repositories\bin\Debug\StackOverflowProject.DomainModels.dll
+D:\DotNET_Programming\StackOverflowProject\StackOverflowProject.Repositories\bin\Debug\StackOverflowProject.DomainModels.pdb
+D:\DotNET_Programming\StackOverflowProject\StackOverflowProject.Repositories\bin\Debug\StackOverflowProject.DomainModels.dll.config
+D:\DotNET_Programming\StackOverflowProject\StackOverflowProject.Repositories\bin\Debug\EntityFramework.xml
+D:\DotNET_Programming\StackOverflowProject\StackOverflowProject.Repositories\bin\Debug\EntityFramework.SqlServer.xml
+D:\DotNET_Programming\StackOverflowProject\StackOverflowProject.Repositories\obj\Debug\StackOverflowProject.Repositories.csproj.AssemblyReference.cache
+D:\DotNET_Programming\StackOverflowProject\StackOverflowProject.Repositories\obj\Debug\StackOverflowProject.Repositories.csproj.CoreCompileInputs.cache
+D:\DotNET_Programming\StackOverflowProject\StackOverflowProject.Repositories\obj\Debug\StackOverflowProject.Repositories.csproj.CopyComplete
+D:\DotNET_Programming\StackOverflowProject\StackOverflowProject.Repositories\obj\Debug\StackOverflowProject.Repositories.dll
+D:\DotNET_Programming\StackOverflowProject\StackOverflowProject.Repositories\obj\Debug\StackOverflowProject.Repositories.pdb

@@ -1,0 +1,12 @@
+D:\DotNET_Programming\StackOverflowProject\StackOverflowProject.DomainModels\bin\Debug\StackOverflowProject.DomainModels.dll.config
+D:\DotNET_Programming\StackOverflowProject\StackOverflowProject.DomainModels\bin\Debug\StackOverflowProject.DomainModels.dll
+D:\DotNET_Programming\StackOverflowProject\StackOverflowProject.DomainModels\bin\Debug\StackOverflowProject.DomainModels.pdb
+D:\DotNET_Programming\StackOverflowProject\StackOverflowProject.DomainModels\bin\Debug\EntityFramework.dll
+D:\DotNET_Programming\StackOverflowProject\StackOverflowProject.DomainModels\bin\Debug\EntityFramework.SqlServer.dll
+D:\DotNET_Programming\StackOverflowProject\StackOverflowProject.DomainModels\bin\Debug\EntityFramework.xml
+D:\DotNET_Programming\StackOverflowProject\StackOverflowProject.DomainModels\bin\Debug\EntityFramework.SqlServer.xml
+D:\DotNET_Programming\StackOverflowProject\StackOverflowProject.DomainModels\obj\Debug\StackOverflowProject.DomainModels.csproj.AssemblyReference.cache
+D:\DotNET_Programming\StackOverflowProject\StackOverflowProject.DomainModels\obj\Debug\StackOverflowProject.DomainModels.csproj.CoreCompileInputs.cache
+D:\DotNET_Programming\StackOverflowProject\StackOverflowProject.DomainModels\obj\Debug\StackOverflowProject.DomainModels.csproj.CopyComplete
+D:\DotNET_Programming\StackOverflowProject\StackOverflowProject.DomainModels\obj\Debug\StackOverflowProject.DomainModels.dll
+D:\DotNET_Programming\StackOverflowProject\StackOverflowProject.DomainModels\obj\Debug\StackOverflowProject.DomainModels.pdb
