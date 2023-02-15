@@ -1,0 +1,108 @@
+﻿@{ 
+    ViewBag.Title = "Register";
+}
+
+<div class="row">
+    <div class="col-sm-12">
+        <h1>Register</h1>
+        <form novalidate="novalidate" action="/account/register" method="post" class="needs-validation">
+            @Html.AntiForgeryToken()
+            <div class="row">
+                <div class="form-check col-sm-12">
+                    <label for="txtName">Name</label>
+                    <input type="text" class="form-control" id="txtName" placeholder="Enter Name" required="required"
+                           pattern="^[a-zA-Z]*$" autofocus="autofocus" name="Name"/>
+                    <div class="valid-feedback">Looks Good!</div>
+                    <div class="invalid-feedback">Please enter name[Alphabets Only]</div>
+
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="form-check col-sm-6">
+                    <label for="txtMobile">Mobile</label>
+                    <input type="text" class="form-control" id="txtMobile" placeholder="Mobile" required="required" name="Mobile" pattern="^[789]\d(9)$"/>
+
+                    <div class="valid-feedback">Looks Good!</div>
+                    <div class="invalid-feedback">Invalid Mobile Number</div>
+
+                </div>
+            
+            
+                <div class="form-check col-sm-6">
+                    <label for="txtEmail">Email</label>
+                    <input type="email" class="form-control" id="txtEmail" placeholder="Email" required="required" name="Email" />
+                    <div class="valid-feedback">Looks Good!</div>
+                    <div class="invalid-feedback">Invalid Email</div>
+                    <small class="email-exist text-bg-danger"></small>
+                </div>
+            </div>
+            
+            <div class="row">
+                <div class="form-check col-sm-6">
+                    <label for="txtPassword">Password</label>
+                    <input type="password" class="form-control" id="txtPassword" placeholder="Password" required="required" min="6" name="Password" 
+                           oninput="form.ConfirmPassword.pattern = escapeRegExp(this.value)" />
+                    <div class="valid-feedback">Looks Good!</div>
+                    <div class="invalid-feedback">Password must contain atleast 6 characters</div>
+
+                </div>
+            
+                <div class="form-check col-sm-6">
+                    <label for="txtPassword">Confirm Password</label>
+                    <input type="password" class="form-control" id="txtConfirmPassword" placeholder="Confirm Password" required="required" name="ConfirmPassword" />
+                    <div class="valid-feedback">Looks Good!</div>
+                    <div class="invalid-feedback">Password and Confirm Password do not match</div>
+
+                </div>
+            </div>
+
+            <button type="submit" class="btn btn-primary">Register</button>
+
+        </form>
+    </div>
+</div>
+
+<script>
+    $("a[href='/account/register']").attr("id", "active");
+
+    $(document).on("submit", "needs-validation", validate);
+    $("needs-validation input").blur(validate);
+    function validate(event)
+    {
+        if ($(".needs-validation")[O].checkValidty() == false || $("email-exist").text() != "") {
+            event.preventDefault();
+        }
+        $("needs-validation")[O].classList.add("was-validated");
+    }
+
+    function escapeRegExp(str)
+    {
+        return str.replace(/[\-\[\]\/\{\}\(\)\*\+\?\.\\\^\$\|]/);
+    }
+
+    $("#txtEmail").blur(function () {
+        $.ajax({
+            url: "/api/account?email=" + $("#txtEmail").val(), type: "Get", success:
+                function (response) {
+                    if (response == "NotFound")
+                    {
+                        $(".email-exist").text("");
+                        $(".email-exist").parent(".form-group").find(".valid-feedback").css("color", "#28a745");
+
+                    }
+                    else
+                    {
+                        $(".email-exist").text("Email already registered");
+                        $(".email-exist").parent(".form-group").find(".valid-feedback").css("color", "white");
+
+                    }
+                },
+            error: function ()
+            {
+                $(".email-exist").text("Error");
+            }
+        
+        });
+    });
+</script>

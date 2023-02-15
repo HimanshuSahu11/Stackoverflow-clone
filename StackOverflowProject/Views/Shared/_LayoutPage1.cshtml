@@ -20,6 +20,7 @@
             <button class="navbar-toggler" data-toggle="collapse" data-target="#collapsibleNavBar">
                 <span class="navbar-toggler-icon"></span>
             </button>
+            
 
             <div class="collapse navbar-collapse" id="collapsibleNavBar">
                 <ul class="navbar-nav">
@@ -38,7 +39,7 @@
                     <li class="nav-item ">
                         <a class="nav-link" href="/allquestions">Questions</a>
                     </li>
-                  
+
                     @if (Session["CurrentUserName"] == null)
                     {
                         <li class="nav-item ">
@@ -54,6 +55,7 @@
                         <li class="nav-item dropdown">
                             <a class="nav-item dropdown-toggle" href="#" data-toggle="dropdown">
                                 <img src="~/Images/admin.png" width="20" />
+                                @Session["CurrentUserName"]
                             </a>
                             <div class="dropdown-menu bg-info">
                                 <a class="dropdown-item" href="/account/logout">Logout</a>
@@ -62,7 +64,9 @@
                             </div>
                         </li>
 
-                     }
+
+
+                    }
                 </ul>
             </div>
             <form class="form-check-inline" action="/home/search">

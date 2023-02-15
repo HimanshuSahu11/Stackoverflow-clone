@@ -1,0 +1,35 @@
+﻿@{
+    ViewBag.Title = "Contact";
+}
+
+
+<div class="row ">
+    <div class="col-sm-6">
+        <div class="card">
+            <div class="card-header  bg-dark text-bg-light">Teams</div>
+            <div class="card-body">
+                <p>
+                    A private secure home for your team's questions and answers. Perfect for teams of 10-500 members. No more digging through stale wikis and lost emails.--
+                    Give your Team back the time it needs to build better products.
+                </p>
+                <a href="#">Learn more</a>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-6">
+        <div class="card">
+            <div class="card-header bg-dark text-bg-light">Enterprise</div>
+            <div class="card-body">
+                <p>
+                    Stack Overflow helps people find the answers they need, when they need them.
+                    We're best known for our public Q&A platform that over 100 million people visit every month to ask questions, learn, and share technical knowledge.
+                </p>
+                <a href="#">Learn more</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $("a[href='/home/about']").attr("id", "active");
+</script>
