@@ -6,6 +6,9 @@
 <head>
     <meta name="viewport" content="width=device-width" />
     <meta charset="utf-8" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <title>@ViewBag.Title - StackOverflow</title>
     @Styles.Render("~/Styles/bootstrap")
     @Styles.Render("~/Styles/site")
@@ -20,6 +23,7 @@
             <button class="navbar-toggler" data-toggle="collapse" data-target="#collapsibleNavBar">
                 <span class="navbar-toggler-icon"></span>
             </button>
+
             
 
             <div class="collapse navbar-collapse" id="collapsibleNavBar">
@@ -57,7 +61,7 @@
                                 <img src="~/Images/admin.png" width="20" />
                                 @Session["CurrentUserName"]
                             </a>
-                            <div class="dropdown-menu bg-info">
+                            <div class="dropdown-menu bg-info ">
                                 <a class="dropdown-item" href="/account/logout">Logout</a>
                                 <a class="dropdown-item" href="/account/changeprofile">Change Profile</a>
                                 <a class="dropdown-item" href="/account/changepassword">Change Password</a>
@@ -66,12 +70,14 @@
 
 
 
-                    }
+                     }
                 </ul>
             </div>
             <form class="form-check-inline" action="/home/search">
-                <input type="search" class="form-control m-sm-2" style="width:150px" placeholder="Search" name="str" />
-                <button class="btn btn-success">Search</button>
+                <div>
+                    <input type="search" class="form-control m-sm-2" style="width:150px" placeholder="Search" name="str" />
+                    <button class="btn btn-success">Search</button>
+                </div>
             </form>
         </nav>
         @RenderBody()

@@ -1,0 +1,154 @@
+﻿@model StackOverflowProject.ViewModels.QuestionViewModel
+
+@{ 
+    ViewBag.Title = "View Questions";
+}
+
+<div class="row">
+    <div class="col-sm-12">
+        <div class="form-group form-row">
+            <div class="col-sm-10 offset-sm-2">
+                <h3>@Model.QuestionName</h3>
+                <div class="row">
+                    <div class="col-sm-2">
+                        <span class="badge bg-info">@Model.Category.CategoryName</span>
+                    </div>
+                    <div class="col-sm-2">
+                        <span class="text-info">
+                            @if (Convert.ToInt32(Session["CurrentUserID"]) != Model.UserID)
+                            {
+                                <a>by @Model.User.Name</a>
+                            }
+                            else
+                            {
+                                <a>by you</a>
+                            }
+                        </span>
+                    </div>
+                    <div class="col-sm-3">
+                        <span class="text-success">by @Model.QuestionDateAndTime</span>
+                    </div>
+                    <div class="col-sm-2">
+                        <span class="badge badge-pill badge-success col-2">
+                            @Model.ViewsCount
+                        </span>
+                        Views
+                    </div>
+                </div>
+                @if (Model.AnswersCount == 0)
+                {
+                    <p class="text-danger">No Answers Yet!</p>
+
+                }
+            </div>
+        </div>
+        @for (int i = 0; i < Model.Answers.Count; i++)
+        {
+            <div class="form-group form-row">
+                <div class="col-sm-1">
+                    <span class="badge badge-secondary col-2 votescount">
+                        @Model.Answers[i].VotesCount
+                    </span>
+                    Votes
+                    @if (Session["CurrentUserName"] != null && Convert.ToInt32(Session["CurrentUserID"]) != Model.Answers[i].UserID)
+                    {
+                        if (Model.Answers[i].CurrentUserVoteType == 1)
+                        {
+                            <img src="~/Images/Green up arrow.png" class="btnUpVote" style="cursor:pointer" width="24px" data-answerid="@Model.Answers[i].AnswerID" />
+                            <img src="~/Images/down arrow.png" class="btnDownVote" style="cursor:pointer" width="24px" data-answerid="@Model.Answers[i].AnswerID" />
+                        }
+                        else if (Model.Answers[i].CurrentUserVoteType == -1)
+                        {
+                            <img src="~/Images/up arrow.png" class="btnUpVote" style="cursor:pointer" width="24px" data-answerid="@Model.Answers[i].AnswerID" />
+                            <img src="~/Images/green down arrow.png" class="btnDownVote" style="cursor:pointer" width="24px" data-answerid="@Model.Answers[i].AnswerID" />
+
+                        }
+                        else
+                        {
+                            <img src="~/Images/up arrow.png" class="btnUpVote" style="cursor:pointer" width="24px" data-answerid="@Model.Answers[i].AnswerID" />
+                            <img src="~/Images/down arrow.png" class="btnDownVote" style="cursor:pointer" width="24px" data-answerid="@Model.Answers[i].AnswerID" />
+
+                        }
+                    }
+                </div>
+                <div class="col-sm-7">
+                    @if (Convert.ToInt32(Session["CurrentUserID"]) != Model.Answers[i].UserID)
+                    {
+                        @Model.Answers[i].AnswerText
+                    }
+                    else
+                    {
+                        <p class="answer">@Model.Answers[i].AnswerText</p>
+                        <button class="btn btn-info editbutton">Edit</button>
+
+                        <form class="needs-validation hidden" novalidate="novalidate" action="/questions/editanswer" method="post">
+                            <div class="form-group form-row">
+                                <div class="col-sm-12">
+                                    <h4>Edit your Answer</h4>
+
+                                    @Html.AntiForgeryToken()
+                                    <input type="hidden" name="AnswerID" value="@Model.Answers[i].AnswerID" />
+                                    <input type="hidden" name="QuestionID" value="@Model.Answers[i].QuestionID" />
+                                    <div class="form-row">
+                                        <div class="form-group col-sm-12">
+                                            <textarea class="form-control" id="txtAnswer" placeholder="Enter Answer" name="AnswerText" required="required">
+                                                @Model.Answers[i].AnswerText
+                                            </textarea>
+                                            <div class="valid-feedback">Looks Good!</div>
+                                            <div class="invalid-feedback">Please Enter Answer</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <button type="submit" class="btn btn-primary">Update Answer</button>
+                                <div class="text-bg-danger">@Html.ValidationSummary()</div>
+                            </div>
+                        </form>
+                    }
+                </div>
+                <div class="col-sm-1">
+                    @if (Convert.ToInt32(Session["CurrentUserID"]) != Model.Answers[i].UserID)
+                    {
+                        <a>by @Model.Answers[i].User.Name</a>
+                    }
+                    else
+                    {
+                        <a>by you</a>
+                    }
+                </div>
+                <div class="col-sm-2">
+                    <a>on @Model.Answers[i].AnswerDateAndTime</a>
+                </div>
+            </div>
+        }
+        @if (Session["CurrentUserID"] != null)
+        {
+            <form class="needs-validation" novalidate="novalidate" action="/questions/addanswer" method="post">
+                <div class="form-group form-row">
+                    <div class="col-sm-12">
+                        <h4>Add your Answer</h4>
+
+                        @Html.AntiForgeryToken()
+                        <input type="hidden" name="QuestionID" value="@Model.QuestionID" />
+                        <div class="form-row">
+                            <div class="form-group col-sm-12">
+                                <textarea class="form-control" id="txtAnswer" placeholder="Enter Answer" name="AnswerText" required="required">
+                                                
+                                            </textarea>
+                                <div class="valid-feedback">Looks Good!</div>
+                                <div class="invalid-feedback">Please Enter Answer</div>
+                            </div>
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Add Answer</button>
+                    <div class="text-bg-danger">@Html.ValidationSummary()</div>
+                </div>
+                
+            </form>
+        }
+    </div>
+</div>
+
+<script>
+    $("a[href='/questions/view']").addClass("active");
+
+</script>

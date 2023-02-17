@@ -1,0 +1,59 @@
+﻿@model StackOverflowProject.ViewModels.EditUserDetailsViewModel
+@{
+    ViewBag.Title = "Change Profile";
+}
+
+<div class="row">
+    <div class="col-sm-12">
+        <h1>Change Profile</h1>
+        <form novalidate="novalidate" action="/account/changeprofile" method="post" class="needs-validation">
+            @Html.AntiForgeryToken()
+            <div class="row">
+                <div class="form-check col-sm-12">
+                    <label for="txtName">Name</label>
+                    <input type="text" class="form-control" id="txtName" placeholder="Enter Name" required="required"
+                           pattern="^[a-zA-Z]*$" autofocus="autofocus" name="Name" value="@Model.Name" />
+                    <div class="valid-feedback">Looks Good!</div>
+                    <div class="invalid-feedback">Please enter name[Alphabets Only]</div>
+
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="form-check col-sm-6">
+                    <label for="txtEmail">Email</label>
+                    @Html.HiddenFor(temp=>temp.Email)
+                    <span>@Model.Email</span>
+                    
+                </div>
+                <div class="form-check col-sm-6">
+                    <label for="txtMobile">Mobile</label>
+                    <input type="text" class="form-control" id="txtMobile" placeholder="Mobile" required="required" name="Mobile" pattern="^[789]\d(9)$" value="@Model.Mobile" />
+
+                    <div class="valid-feedback">Looks Good!</div>
+                    <div class="invalid-feedback">Invalid Mobile Number</div>
+
+                </div>
+            </div>
+            
+            <button type="submit" class="btn btn-primary">Update Profile</button>
+
+        </form>
+    </div>
+</div>
+
+<script>
+    $("a[href='/account/changeprofile']").attr("id", "active");
+
+    $(document).on("submit", "needs-validation", validate);
+    $("needs-validation input").blur(validate);
+    function validate(event)
+    {
+        if ($(".needs-validation")[O].checkValidty() == false)
+        {
+            event.preventDefault();
+        }
+        $("needs-validation")[O].classList.add("was-validated");
+    }
+
+</script>

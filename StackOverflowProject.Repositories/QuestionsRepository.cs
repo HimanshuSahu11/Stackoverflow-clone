@@ -67,7 +67,7 @@ namespace StackOverflowProject.Repositories
             Question qt = db.Questions.Where(temp => temp.QuestionID == qid).FirstOrDefault();
             if (qt != null)
             {
-                qt.ViewsCount = value;
+                qt.ViewsCount += value;
                 db.SaveChanges();
 
             }
